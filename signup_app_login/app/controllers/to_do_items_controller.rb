@@ -3,7 +3,7 @@ class ToDoItemsController < ApplicationController
     @to_do_item = current_user.to_do_items.build(to_do_item_params)
     if @to_do_item.save
       flash[:success] = "New item added"
-      redirect_to root_path
+      redirect_to :back
     else 
       flash[:error] = "Could not save item!"
       render 'users/show' 
