@@ -1,0 +1,7 @@
+<!--id="to_do_item-%<= to_do_item.id >%"-->
+<li>
+  <span class="content">
+    <%= to_do_item.content %>
+  </span>
+  <%= link_to "delete", to_do_item, method: :delete, data: { confirm: "You sure?" } %>
+</li>

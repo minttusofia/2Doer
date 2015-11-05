@@ -1,0 +1,17 @@
+<% provide(:title, @user.name) %>
+<h1>
+  <%= @user.name%>'s To Do List
+</h1>
+
+<section class="to_do_item_form">
+  <%= render 'shared/to_do_item_form' %>
+</section>
+
+<% if @user.to_do_items.any? %>
+<h3>To Do: (<%= @user.to_do_items.count %>)</h3>
+    <ol class="to_do_items">
+      <%= render @user.to_do_items %>
+    </ol>
+<% else %>
+    <p>Your list is empty :) </p>
+<% end %>
