@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   
   def show 
   	@user = User.find(params[:id])
+    @to_do_items = @user.to_do_items.build
   end
 
   def new
@@ -25,8 +26,14 @@ class UsersController < ApplicationController
   end 
     
 private
-def user_params
+  def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
+  
+#  def to_do_item_params
+#    params.require(:to_do_item).permit(:content)
+#    end
+  
+  
   
 end

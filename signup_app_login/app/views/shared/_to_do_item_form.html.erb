@@ -1,0 +1,6 @@
+<%= form_for(@to_do_items) do |f| %>
+  <div class="field">
+    <%= f.text_area :content, placeholder: "Add new item..." %>
+  </div>
+  <%= f.submit "Add", class: "btn btn-primary" %>
+<% end %>
