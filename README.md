@@ -8,8 +8,9 @@
 	* [Ruby](http://rubyonrails.org/download/)
 	* [Rails](http://rubyonrails.org/download/)
 
-2. Clone this repo in your local machine using the terminal 
-<code>> git clone https://github.com/minttusofia/2Doer.git </code>
+2. Clone this repo in your local machine using the terminal
+
+```git clone https://github.com/minttusofia/2Doer.git```
 
 3. CD to the folder <code>cd 2Doer</code>, and <code>cd 2Doer_app</code>
 
