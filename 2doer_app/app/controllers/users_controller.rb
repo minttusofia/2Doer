@@ -15,9 +15,9 @@ class UsersController < ApplicationController
     if @user.save
       log_in @user
         redirect_to @user
-    else
-      flash[:notice] = "You fucked up"
-      render 'new'
+    #else
+      #flash[:notice] = "You fucked up"
+      #render 'new'
     end
   end
   
