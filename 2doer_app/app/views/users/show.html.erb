@@ -1,25 +1,36 @@
 <% provide(:title, @user.name) %>
-<div class="btn btn-default" style="float: right; margin-right: 15px;"><a href="..">Log out</a></div>
-<br><br>
-<h1 style="text-align: center">
+<% provide(:home, '') %>
+<% provide(:redirect_to_home, '') %>
+<% provide(:log_status, 'Log out') %>
+<% provide(:redirect_to_log, '..') %>
+<% provide(:signup, '') %>
+<% provide(:redirect_to_signup, '') %>
+
+<h2 style="text-align: center;">
   <%= @user.name%>'s To Do List
-</h1>
+</h2>
 
 <section class="to_do_item_form" style="text-align: center">
   <%= render 'shared/to_do_item_form' %>
 </section>
 
-<div class="todolist" style="text-align: center">
-<% if @user.to_do_items.any? %>
-<h3>To Do: (<%= @user.to_do_items.count %>)</h3>
-    <div style="position: relative; margin-left: auto; margin-right: auto; width: 500px;">
-    <ol class="to_do_items" style="text-align: left;">
-        <%= render @user.to_do_items %>
-    </ol>
-    </div>
-    
-<% else %>
-    <br>
-    <p>All caught up!</p>
-<% end %>
+<div class="todolist">
+  <% if @user.to_do_items.any? %>
+    <% if @user.to_do_items.count == 1 %>
+      <h3 style="text-align: center;"><%= @user.to_do_items.count %> thing to do</h3>
+    <% else %>
+      <h3 style="text-align: center;"><%= @user.to_do_items.count %> things to do</h3>
+    <% end %>
+
+      <div style="position: relative; margin-left: auto; margin-right: auto;">
+        <table class="table table-striped"> 
+          <ol class="to_do_items" style="text-align: left; overflow:scroll;">
+              <%= render @user.to_do_items %>
+          </ol>
+        </table>
+      </div>
+
+  <% else %>
+      <br><p style="text-align:center">All caught up!</p>
+  <% end %>
 </div>

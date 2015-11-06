@@ -8,60 +8,43 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+  
 <body>
-    <div class="container">
-        <br>
-              <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="..">2Doer</a>
-          </div>
-          <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-              <li><a href="..">Home</a></li>
-              <li><a href="login">Log in</a></li>
-              <li><a href="signup">Sign up</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div><!--/.container-fluid -->
-      </nav>
-        <!--<nav class="navbar navbar-default" role="navigation">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-               
-                    </button>
-                    <a class="navbar-brand" href="..">2Doer</a>
-                </div>
-                <!--<div id="navbar" class="navbar-collapse collapse">-->
-                    <!--<ul class="nav navbar-nav">
-                        <li class="active"><a href="..">Home</a></li>
-                        <li><a href="login">Log in</a></li>
-                        <li><a href="signup">Sign up</a></li>
-                    </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="..">Home <span class="sr-only">(current)</span></a></li>
-                    <li><a href="login">Log in</a></li>
-                    <li><a href="signup">Sign up</a></li>
-                </ul>-->
-                <!--</div>--><!--
-            </div>
-        </nav>-->
-        <div class="jumbotron">
-            <% flash.each do |key, value| %>
-                <div class="alert alert-<%= key %>"><%= value %></div>
-            <% end %>
-            <%= yield %>
-        </div>
-        
+<div class="container-fluid"><br>
+  <nav class="navbar navbar-default">
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand">2Doer</a>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a href=<%= yield(:redirect_to_home) %>><%= yield(:home) %></a></li>
+        <li><a href=<%= yield(:redirect_to_log) %>><%= yield(:log_status) %></a></li>
+        <li><a href=<%= yield(:redirect_to_sign_up) %>><%= yield(:signup) %></a></li>
+      </ul>
+    </div>
+    
+  </nav>
+
+  <div class="row jumbotron img-responsive" style="background-image:url(/assets/offtherails.png); background-size:cover; margin-left:0px; margin-bottom:15px; min-height:100vh;">
+    <div class="col-xs-10 col-sm-6 col-md-6 col-lg-6 col-xs-push-1 col-sm-push-6 col-md-push-6 col-lg-push-6" style="background-color:white; border-radius:5px; min-height:50vh;">
+        <% flash.each do |key, value| %>
+            <div class="alert alert-<%= key %>"><%= value %></div>
+        <% end %>
+        <%= yield %>
+    </div> 
+  </div>
+           
+</div>
+  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!--<script src="../../dist/js/bootstrap.min.js"></script>-->
     <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
 </body>

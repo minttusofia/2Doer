@@ -1,22 +1,28 @@
 <% provide(:title, 'Sign up') %>
+<% provide(:log_status, 'Log in') %>
+<% provide(:redirect_to_log, '/login') %>
+<% provide(:home, 'Home') %>
+<% provide(:redirect_to_home, '..') %>
+<% provide(:signup, 'Sign Up') %>
+<% provide(:redirect_to_sign_up, 'signup') %>
 <h1>Sign up</h1>
 <div>
     <%= form_for(@user) do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
     <br>
       <%= f.label :name %>
-      <%= f.text_field :name, :class => "form"%>
+      <%= f.text_field :name, class: 'form-control'%>
       <br>
       <%= f.label :email %>
-      <%= f.email_field :email%>
-      <br><br>
+      <%= f.email_field :email, class: 'form-control'%>
+      <br>
       <%= f.label :password %>
-      <%= f.password_field :password%>
+      <%= f.password_field :password, class: 'form-control'%>
       <br>
       <%= f.label :password_confirmation%>
-      <%= f.password_field :password_confirmation%>
+      <%= f.password_field :password_confirmation, class: 'form-control'%>
       <br><br>
-      <%= f.submit "Create my account", class: "btn" %>
+  <%= f.submit "Create my account", class: "btn btn-success", :style => "margin-bottom:20px" %>
     <% end %>
 </div>
 

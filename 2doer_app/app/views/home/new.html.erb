@@ -1,4 +1,10 @@
 <% provide(:title, 'Welcome') %>
+<% provide(:log_status, 'Log in') %>
+<% provide(:redirect_to_log, '/login') %>
+<% provide(:home, 'Home') %>
+<% provide(:redirect_to_home, '..') %>
+<% provide(:signup, 'Sign Up') %>
+<% provide(:redirect_to_sign_up, 'signup') %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,8 +12,10 @@
 </head>
 <body>
 	<h1>2Doer</h1>
-    <p>your online to-do list</p>
-	<%= link_to "Log in", login_path, class: "btn" %>
-	<%= link_to "Sign up", signup_path, class: "btn" %>
+    <p>Welcome to your online to-do list:</p>
+  <br>
+  <%= link_to "Log in", login_path, class: "btn btn-success center-block" %>
+  <br><br>
+  <%= link_to "Sign up", signup_path, class: "btn btn-success center-block" %>
 </body>
 </html>

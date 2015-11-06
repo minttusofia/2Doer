@@ -1,7 +1,12 @@
-<!--id="to_do_item-%<= to_do_item.id >%"-->
-<li>
-  <span class="content" style="width: 90%; word-wrap: break-word;">
-    <%= to_do_item.content %>
-  </span>
-    <%= link_to "X", to_do_item, method: :delete, data: { confirm: "Are you sure you want to delete " + to_do_item.content + '?'}, :style => "float: right" %>
-</li>
+<tr>
+  <td>
+    <li>
+    <span class="content" style="width: 90%; word-wrap: break-word;">
+      <%= to_do_item.content %>
+    </span>
+    </li>
+  </td>
+  <td>
+    <%= link_to "x", to_do_item, method: :delete, data: { confirm: "Are you sure you want to delete " + to_do_item.content + '?'}, :style => "float: right" %>
+  </td>  
+</tr>
