@@ -15,7 +15,7 @@
 
 4. Run <code>bundle install</code> and <code>rake db:migrate</code>
 
-5. Run <code>> rails server</code>, and load the URL into your browser (http://localhost:3000) 
+5. Run <code>rails server</code>, and load the URL into your browser (http://localhost:3000) 
 
 ##Resources used
 
