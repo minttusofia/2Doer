@@ -13,7 +13,9 @@
 
 3. CD to the folder <code>cd 2Doer</code>, and <code>cd 2Doer_app</code>
 
-4. Run <code>> rails server</code>, and load the URL into your browser (http://localhost:3000) 
+4. Run <code>bundle install</code> and <code>rake db:migrate</code>
+
+5. Run <code>> rails server</code>, and load the URL into your browser (http://localhost:3000) 
 
 ##Resources used
 
