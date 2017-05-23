@@ -2,7 +2,7 @@
 
 2Doer is a To Do List web application designed using the Rails framework and styled with Bootstrap.
 
-##How to run the web app
+## How to run the web app
 
 1. Make sure you have installed
 	* [Ruby](http://rubyonrails.org/download/)
@@ -17,7 +17,7 @@
 
 5. Run <code>rails server</code>, and load the URL into your browser (http://localhost:3000) 
 
-##Resources used
+## Resources used
 
 * Ruby on rails [documentation](http://rubyonrails.org/documentation/), [tutorial](https://www.railstutorial.org/)
 * [Bootstrap](http://getbootstrap.com/) 
